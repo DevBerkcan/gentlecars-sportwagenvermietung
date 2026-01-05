@@ -3,6 +3,8 @@ import Image from "next/image";
 import { getCars } from "@/lib/api/client";
 import Navigation from "@/components/Navigation";
 import ContactButtons from "@/components/ContactButtons";
+import CookieBanner from "@/components/CookieBanner";
+import FAQ from "@/components/FAQ";
 
 export const dynamic = 'force-dynamic'
 
@@ -13,6 +15,7 @@ export default async function HomePage() {
     <main className="min-h-screen bg-black">
       <Navigation />
       <ContactButtons />
+      <CookieBanner />
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -37,20 +40,20 @@ export default async function HomePage() {
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 font-serif tracking-tight leading-tight">
-            Luxus trifft <span className="text-gold">Performance</span>
+            Luxus trifft <span className="text-emerald-400">Performance</span>
           </h1>
           <p className="text-lg md:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed">
-            Erleben Sie die exklusivsten Sportwagen Deutschlands. Von Porsche bis Ferrari – 
+            Erleben Sie die exklusivsten Sportwagen Deutschlands. Von Porsche bis Ferrari –
             Ihr Traumwagen wartet auf Sie.
           </p>
-          <p className="text-gold text-sm md:text-base mb-12 uppercase tracking-widest font-semibold">
+          <p className="text-white/80 text-sm md:text-base mb-12 uppercase tracking-widest font-semibold">
             Premium Sportwagenvermietung seit 2020
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               href="/verfuegbarkeit"
-              className="group relative px-12 py-5 bg-gold text-black font-bold rounded-lg hover:bg-gold-light transition-all uppercase tracking-wider text-base shadow-2xl hover:shadow-gold/50 hover:scale-105"
+              className="group relative px-12 py-5 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-all uppercase tracking-wider text-base shadow-2xl hover:shadow-white/30 hover:scale-105"
             >
               <span className="flex items-center gap-3">
                 Verfügbare Fahrzeuge
@@ -61,7 +64,7 @@ export default async function HomePage() {
             </Link>
             <Link
               href="/galerie"
-              className="px-12 py-5 border-2 border-gold text-gold font-bold rounded-lg hover:bg-gold hover:text-black transition-all uppercase tracking-wider text-base"
+              className="px-12 py-5 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-black transition-all uppercase tracking-wider text-base"
             >
               Galerie ansehen
             </Link>
@@ -70,7 +73,7 @@ export default async function HomePage() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="flex flex-col items-center gap-2 text-gold">
+          <div className="flex flex-col items-center gap-2 text-white/60">
             <span className="text-xs uppercase tracking-widest">Scroll</span>
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -80,7 +83,7 @@ export default async function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-black to-gray-900 border-y border-gold/10">
+      <section className="py-20 px-4 bg-gradient-to-b from-black to-gray-900 border-y border-white/10">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -90,7 +93,7 @@ export default async function HomePage() {
               { number: "24/7", label: "Kundenservice" }
             ].map((stat, idx) => (
               <div key={idx} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-gold mb-2 font-serif">
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2 font-serif">
                   {stat.number}
                 </div>
                 <div className="text-gray-400 text-sm uppercase tracking-wider">
@@ -107,9 +110,9 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-white mb-4">
-              Warum <span className="text-gold">GentleCars</span>?
+              Warum <span className="text-emerald-400">GentleCars</span>?
             </h2>
-            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto" />
+            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent mx-auto" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -169,8 +172,8 @@ export default async function HomePage() {
                 description: 'Regelmäßige Wartung und professionelle Aufbereitung garantiert.'
               }
             ].map((feature, idx) => (
-              <div key={idx} className="group p-8 rounded-xl bg-black/50 border border-gold/10 hover:border-gold/30 transition-all hover:transform hover:scale-105">
-                <div className="text-gold mb-6 group-hover:scale-110 transition-transform inline-block">
+              <div key={idx} className="group p-8 rounded-xl bg-black/50 border border-white/10 hover:border-emerald-400/50 transition-all hover:transform hover:scale-105">
+                <div className="text-white group-hover:text-emerald-400 mb-6 group-hover:scale-110 transition-all inline-block">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-serif text-white mb-3">{feature.title}</h3>
@@ -186,9 +189,9 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-serif text-white mb-4">
-              Unsere <span className="text-gold">Flotte</span>
+              Unsere <span className="text-emerald-400">Flotte</span>
             </h2>
-            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-6" />
+            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-6" />
             <p className="text-gray-400 max-w-2xl mx-auto">
               Entdecken Sie unsere handverlesene Auswahl an Premium-Sportwagen
             </p>
@@ -197,7 +200,7 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {cars.map((car) => (
               <Link key={car.id} href={`/cars/${car.slug}`} className="group">
-                <div className="bg-gray-900 border border-gold/20 rounded-lg overflow-hidden hover:border-gold transition-all hover:shadow-xl hover:shadow-gold/10">
+                <div className="bg-gray-900 border border-white/20 rounded-lg overflow-hidden hover:border-emerald-400 transition-all hover:shadow-xl hover:shadow-emerald-400/10">
                   <div className="aspect-[4/3] bg-black relative overflow-hidden">
                     {car.images?.[0] ? (
                       <img
@@ -221,13 +224,13 @@ export default async function HomePage() {
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-xl font-serif text-white mb-2 group-hover:text-gold transition-colors">
+                    <h3 className="text-xl font-serif text-white mb-2 group-hover:text-emerald-400 transition-colors">
                       {car.name}
                     </h3>
                     <p className="text-gray-400 text-sm mb-4">
                       {car.brand} • {car.model} • {car.year}
                     </p>
-                    
+
                     {car.specs && (
                       <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
                         {car.specs.power && (
@@ -241,12 +244,12 @@ export default async function HomePage() {
                       </div>
                     )}
 
-                    <div className="flex items-center justify-between pt-4 border-t border-gold/10">
+                    <div className="flex items-center justify-between pt-4 border-t border-white/10">
                       <div>
                         <div className="text-xs text-gray-500 mb-1">Ab</div>
-                        <div className="text-gold font-bold text-lg">299€<span className="text-sm">/Tag</span></div>
+                        <div className="text-white font-bold text-lg">299€<span className="text-sm">/Tag</span></div>
                       </div>
-                      <span className="text-sm text-gray-500 group-hover:text-gold transition-colors flex items-center gap-1">
+                      <span className="text-sm text-gray-500 group-hover:text-emerald-400 transition-colors flex items-center gap-1">
                         Details
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -262,7 +265,7 @@ export default async function HomePage() {
           <div className="text-center">
             <Link
               href="/galerie"
-              className="inline-block px-10 py-4 border-2 border-gold text-gold font-semibold rounded-lg hover:bg-gold hover:text-black transition-all uppercase tracking-wider"
+              className="inline-block px-10 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all uppercase tracking-wider"
             >
               Alle Fahrzeuge ansehen
             </Link>
@@ -275,9 +278,9 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-serif text-white mb-4">
-              Das sagen unsere <span className="text-gold">Kunden</span>
+              Das sagen unsere <span className="text-emerald-400">Kunden</span>
             </h2>
-            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto" />
+            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent mx-auto" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -304,10 +307,10 @@ export default async function HomePage() {
                 car: "Lamborghini Huracán"
               }
             ].map((testimonial, idx) => (
-              <div key={idx} className="bg-black border border-gold/20 rounded-lg p-8 hover:border-gold/40 transition-all">
+              <div key={idx} className="bg-black border border-white/20 rounded-lg p-8 hover:border-emerald-400/40 transition-all">
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={i} className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
@@ -315,10 +318,10 @@ export default async function HomePage() {
                 <p className="text-gray-300 mb-6 leading-relaxed italic">
                   "{testimonial.text}"
                 </p>
-                <div className="border-t border-gold/10 pt-4">
+                <div className="border-t border-white/10 pt-4">
                   <div className="font-semibold text-white">{testimonial.name}</div>
                   <div className="text-sm text-gray-400">{testimonial.location}</div>
-                  <div className="text-xs text-gold mt-1">{testimonial.car}</div>
+                  <div className="text-xs text-emerald-400 mt-1">{testimonial.car}</div>
                 </div>
               </div>
             ))}
@@ -326,30 +329,33 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <FAQ />
+
       {/* CTA Section */}
       <section className="py-24 px-4 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80" />
-        
+
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-5xl md:text-6xl font-serif text-white mb-6">
-            Bereit für Ihr <span className="text-gold">Abenteuer</span>?
+            Bereit für Ihr <span className="text-emerald-400">Abenteuer</span>?
           </h2>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-8" />
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-8" />
           <p className="text-gray-300 text-lg mb-12 leading-relaxed">
-            Buchen Sie jetzt Ihren Traumwagen und erleben Sie Performance pur. 
+            Buchen Sie jetzt Ihren Traumwagen und erleben Sie Performance pur.
             Unser Team berät Sie gerne persönlich.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/verfuegbarkeit"
-              className="px-12 py-5 bg-gold text-black font-bold rounded-lg hover:bg-gold-light transition-all uppercase tracking-wider shadow-2xl hover:shadow-gold/50 hover:scale-105"
+              className="px-12 py-5 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-all uppercase tracking-wider shadow-2xl hover:shadow-white/30 hover:scale-105"
             >
               Jetzt buchen
             </Link>
             <Link
               href="/ueber-uns"
-              className="px-12 py-5 border-2 border-gold text-gold font-bold rounded-lg hover:bg-gold hover:text-black transition-all uppercase tracking-wider"
+              className="px-12 py-5 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-black transition-all uppercase tracking-wider"
             >
               Mehr über uns
             </Link>
@@ -358,7 +364,7 @@ export default async function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black border-t border-gold/20 py-16 px-4">
+      <footer className="bg-black border-t border-white/20 py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div className="md:col-span-1">
@@ -367,8 +373,8 @@ export default async function HomePage() {
                   <Image src="/logo-gold.png" alt="GentleCars" fill className="object-contain" />
                 </div>
                 <div>
-                  <div className="text-gold font-serif text-2xl">GENTLECARS</div>
-                  <div className="text-gold/60 text-xs tracking-widest">SPORTWAGENVERMIETUNG</div>
+                  <div className="text-white font-serif text-2xl">GENTLECARS</div>
+                  <div className="text-white/60 text-xs tracking-widest">SPORTWAGENVERMIETUNG</div>
                 </div>
               </div>
               <p className="text-gray-400 text-sm">
@@ -379,20 +385,20 @@ export default async function HomePage() {
             <div>
               <h4 className="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Navigation</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/verfuegbarkeit" className="text-gray-400 hover:text-gold transition-colors">Verfügbarkeit</Link></li>
-                <li><Link href="/galerie" className="text-gray-400 hover:text-gold transition-colors">Galerie</Link></li>
-                <li><Link href="/ueber-uns" className="text-gray-400 hover:text-gold transition-colors">Über uns</Link></li>
-                <li><Link href="/kontakt" className="text-gray-400 hover:text-gold transition-colors">Kontakt</Link></li>
+                <li><Link href="/verfuegbarkeit" className="text-gray-400 hover:text-emerald-400 transition-colors">Verfügbarkeit</Link></li>
+                <li><Link href="/galerie" className="text-gray-400 hover:text-emerald-400 transition-colors">Galerie</Link></li>
+                <li><Link href="/ueber-uns" className="text-gray-400 hover:text-emerald-400 transition-colors">Über uns</Link></li>
+                <li><Link href="/kontakt" className="text-gray-400 hover:text-emerald-400 transition-colors">Kontakt</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Rechtliches</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/impressum" className="text-gray-400 hover:text-gold transition-colors">Impressum</Link></li>
-                <li><Link href="/datenschutz" className="text-gray-400 hover:text-gold transition-colors">Datenschutz</Link></li>
-                <li><Link href="/agb" className="text-gray-400 hover:text-gold transition-colors">AGB</Link></li>
-                <li><Link href="/widerruf" className="text-gray-400 hover:text-gold transition-colors">Widerrufsrecht</Link></li>
+                <li><Link href="/impressum" className="text-gray-400 hover:text-emerald-400 transition-colors">Impressum</Link></li>
+                <li><Link href="/datenschutz" className="text-gray-400 hover:text-emerald-400 transition-colors">Datenschutz</Link></li>
+                <li><Link href="/agb" className="text-gray-400 hover:text-emerald-400 transition-colors">AGB</Link></li>
+                <li><Link href="/widerruf" className="text-gray-400 hover:text-emerald-400 transition-colors">Widerrufsrecht</Link></li>
               </ul>
             </div>
 
@@ -400,20 +406,20 @@ export default async function HomePage() {
               <h4 className="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Kontakt</h4>
               <ul className="space-y-3 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                   </svg>
                   +49 123 456 789
                 </li>
                 <li className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                   </svg>
                   info@gentlecars.de
                 </li>
                 <li className="flex items-start gap-2">
-                  <svg className="w-4 h-4 text-gold mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 text-emerald-400 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                   </svg>
                   <span>Musterstraße 123<br/>45127 Essen</span>
@@ -422,13 +428,13 @@ export default async function HomePage() {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-gold/10">
+          <div className="pt-8 border-t border-white/10">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="text-sm text-gray-500">
                 © 2026 GentleCars. Alle Rechte vorbehalten.
               </div>
               <div className="text-sm text-gray-500">
-                Made with ❤️ by <span className="text-gold">GentleWebdesign</span>
+                Made with ❤️ by <span className="text-white">GentleWebdesign</span>
               </div>
             </div>
           </div>

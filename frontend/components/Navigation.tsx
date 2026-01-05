@@ -19,7 +19,7 @@ export default function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-black/95 backdrop-blur-md border-b border-gold/20' : 'bg-transparent'
+        scrolled ? 'bg-black/95 backdrop-blur-md border-b border-white/20' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,10 +36,10 @@ export default function Navigation() {
               />
             </div>
             <div className="hidden sm:block">
-              <div className="text-gold font-serif text-xl md:text-2xl tracking-wider">
+              <div className="text-white font-serif text-xl md:text-2xl tracking-wider">
                 GENTLECARS
               </div>
-              <div className="text-gold/60 text-xs tracking-widest uppercase">
+              <div className="text-white/60 text-xs tracking-widest uppercase">
                 Sportwagenvermietung
               </div>
             </div>
@@ -49,25 +49,25 @@ export default function Navigation() {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/#fleet"
-              className="text-gray-300 hover:text-gold transition-colors text-sm uppercase tracking-wider"
+              className="text-gray-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-wider"
             >
               Flotte
             </Link>
             <Link
               href="/#services"
-              className="text-gray-300 hover:text-gold transition-colors text-sm uppercase tracking-wider"
+              className="text-gray-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-wider"
             >
               Services
             </Link>
             <Link
               href="/#about"
-              className="text-gray-300 hover:text-gold transition-colors text-sm uppercase tracking-wider"
+              className="text-gray-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-wider"
             >
               Über uns
             </Link>
             <Link
               href="/kontakt"
-              className="px-6 py-2.5 bg-gold text-black font-semibold rounded hover:bg-gold-light transition-all text-sm uppercase tracking-wider"
+              className="px-6 py-2.5 bg-white text-black font-semibold rounded hover:bg-gray-200 transition-all text-sm uppercase tracking-wider"
             >
               Kontakt
             </Link>
@@ -76,7 +76,7 @@ export default function Navigation() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-gold p-2"
+            className="md:hidden text-white p-2"
           >
             <svg
               className="w-6 h-6"
@@ -106,32 +106,32 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-black/98 backdrop-blur-lg border-t border-gold/20">
+        <div className="md:hidden bg-black/98 backdrop-blur-lg border-t border-white/20">
           <div className="px-4 py-6 space-y-4">
             <Link
               href="/#fleet"
-              className="block text-gray-300 hover:text-gold transition-colors text-sm uppercase tracking-wider py-2"
+              className="block text-gray-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-wider py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Flotte
             </Link>
             <Link
               href="/#services"
-              className="block text-gray-300 hover:text-gold transition-colors text-sm uppercase tracking-wider py-2"
+              className="block text-gray-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-wider py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Services
             </Link>
             <Link
               href="/#about"
-              className="block text-gray-300 hover:text-gold transition-colors text-sm uppercase tracking-wider py-2"
+              className="block text-gray-300 hover:text-emerald-400 transition-colors text-sm uppercase tracking-wider py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Über uns
             </Link>
             <Link
               href="/kontakt"
-              className="block px-6 py-3 bg-gold text-black font-semibold rounded hover:bg-gold-light transition-all text-sm uppercase tracking-wider text-center"
+              className="block px-6 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition-all text-sm uppercase tracking-wider text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
               Kontakt

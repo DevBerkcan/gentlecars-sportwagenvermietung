@@ -56,6 +56,11 @@ module.exports = {
           light: '#D4AF6E',
           dark: '#8B6F38',
         },
+        emerald: {
+          DEFAULT: '#10b981',
+          light: '#34d399',
+          dark: '#059669',
+        },
         dark: {
           DEFAULT: '#20302D',
           lighter: '#2A3F3C',
