@@ -95,10 +95,17 @@ builder.Services.AddCors(opt =>
 {
     opt.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins(frontendUrl, "http://localhost:3000", "http://localhost:3001")
-              .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials();
+        policy.WithOrigins(
+                frontendUrl,
+                "http://localhost:3000",
+                "http://localhost:3001",
+                "https://gentlecars-sportwagenvermietung.vercel.app",
+                "https://gentlecars-sportwagenvermietung-git-main-devberkcans-projects.vercel.app"
+            )
+            .SetIsOriginAllowedToAllowWildcardSubdomains()
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
     });
 });
 
@@ -126,15 +133,13 @@ using (var scope = app.Services.CreateScope())
 }
 
 // Middleware Pipeline
-if (app.Environment.IsDevelopment())
+// Swagger in allen Environments aktivieren
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "GentleCars API v1");
-        c.RoutePrefix = "swagger";
-    });
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "GentleCars API v1");
+    c.RoutePrefix = "swagger";
+});
 
 app.UseCors("AllowFrontend");
 

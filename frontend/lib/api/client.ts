@@ -41,9 +41,24 @@ export interface BookingResponse {
 }
 
 export async function getCars(): Promise<Car[]> {
-  const res = await fetch(`${API_BASE}/cars`, { cache: 'no-store' })
-  if (!res.ok) throw new Error('Failed to fetch cars')
-  return res.json()
+  try {
+    console.log('Fetching cars from:', `${API_BASE}/cars`)
+    const res = await fetch(`${API_BASE}/cars`, { cache: 'no-store' })
+    console.log('Response status:', res.status)
+
+    if (!res.ok) {
+      const errorText = await res.text()
+      console.error('API Error:', errorText)
+      throw new Error(`Failed to fetch cars: ${res.status} - ${errorText}`)
+    }
+
+    const data = await res.json()
+    console.log('Cars loaded:', data.length)
+    return data
+  } catch (error) {
+    console.error('getCars error:', error)
+    throw error
+  }
 }
 
 export async function getCarBySlug(slug: string): Promise<Car> {
