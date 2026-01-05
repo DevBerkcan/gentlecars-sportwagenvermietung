@@ -5,6 +5,11 @@ import Navigation from "@/components/Navigation";
 import ContactButtons from "@/components/ContactButtons";
 import CookieBanner from "@/components/CookieBanner";
 import FAQ from "@/components/FAQ";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import BackToTop from "@/components/BackToTop";
+import Newsletter from "@/components/Newsletter";
+import TrustBadges from "@/components/TrustBadges";
+import PriceCalculator from "@/components/PriceCalculator";
 
 export const dynamic = 'force-dynamic'
 
@@ -16,6 +21,8 @@ export default async function HomePage() {
       <Navigation />
       <ContactButtons />
       <CookieBanner />
+      <WhatsAppButton />
+      <BackToTop />
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -81,6 +88,9 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Trust Badges */}
+      <TrustBadges />
 
       {/* Stats Section */}
       <section className="py-20 px-4 bg-gradient-to-b from-black to-gray-900 border-y border-white/10">
@@ -273,6 +283,9 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Price Calculator */}
+      <PriceCalculator />
+
       {/* Testimonials */}
       <section className="py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
@@ -331,6 +344,9 @@ export default async function HomePage() {
 
       {/* FAQ Section */}
       <FAQ />
+
+      {/* Newsletter Section */}
+      <Newsletter />
 
       {/* CTA Section */}
       <section className="py-24 px-4 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
