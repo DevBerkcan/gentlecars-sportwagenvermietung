@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 180 20% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 180 20% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 20% 12%;
+
+    --primary: 38 53% 51%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 20% 12%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 38 5% 96%;
+    --muted-foreground: 180 10% 50%;
+
+    --accent: 38 53% 51%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 38 5% 90%;
+    --input: 38 5% 90%;
+    --ring: 38 53% 51%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 180 20% 12%;
+    --foreground: 0 0% 98%;
+
+    --card: 180 20% 14%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 180 20% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 38 53% 51%;
+    --primary-foreground: 180 20% 12%;
+
+    --secondary: 180 15% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 180 15% 18%;
+    --muted-foreground: 38 5% 70%;
+
+    --accent: 38 53% 51%;
+    --accent-foreground: 180 20% 12%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 180 15% 18%;
+    --input: 180 15% 18%;
+    --ring: 38 53% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* GentleCars Custom Styles */
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gold rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gold-dark;
+}
+
+/* Noise Texture Overlay */
+.noise-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #B9924A 0%, #D4AF6E 50%, #B9924A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shine Effect for CTA buttons */
+.shine {
+  background: linear-gradient(
+    90deg,
+    #B9924A 0%,
+    #D4AF6E 50%,
+    #B9924A 100%
+  );
+  background-size: 200% 100%;
+  animation: shine 3s linear infinite;
+}
