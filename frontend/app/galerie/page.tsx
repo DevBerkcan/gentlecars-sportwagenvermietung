@@ -186,7 +186,7 @@ export default function GaleriePage() {
       </section>
 
       {/* Filter Section */}
-      <section className="py-8 px-4 bg-gray-900 border-y border-gold/10 sticky top-20 z-40">
+      <section className="py-8 px-4 bg-gray-900 border-y border-gold/10 lg:sticky lg:top-20 z-40">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {/* Brand Filter */}

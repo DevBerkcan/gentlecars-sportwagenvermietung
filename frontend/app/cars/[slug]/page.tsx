@@ -235,7 +235,7 @@ export default function CarDetailPage() {
           </div>
 
           {/* Thumbnail Gallery */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
             {car.images.map((image, index) => (
               <button
                 key={index}
@@ -258,21 +258,21 @@ export default function CarDetailPage() {
             {/* Left Column - Details */}
             <div className="lg:col-span-2">
               <div className="mb-8">
-                <h1 className="text-5xl font-serif text-white mb-4">{car.name}</h1>
-                <div className="flex items-center gap-4 text-gray-400 mb-6">
+                <h1 className="text-4xl md:text-5xl font-serif text-white mb-4">{car.name}</h1>
+                <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-gray-400 text-sm sm:text-base mb-6">
                   <span>{car.brand}</span>
                   <span>•</span>
                   <span>{car.model}</span>
                   <span>•</span>
                   <span>{car.year}</span>
                 </div>
-                <p className="text-gray-300 leading-relaxed text-lg">{car.description}</p>
+                <p className="text-gray-300 leading-relaxed text-base sm:text-lg">{car.description}</p>
               </div>
 
               {/* Specifications */}
               <div className="bg-gray-900 border border-gold/20 rounded-xl p-8 mb-8">
                 <h2 className="text-2xl font-serif text-white mb-6">Technische Daten</h2>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <div className="text-gray-400 text-sm mb-1">Leistung</div>
                     <div className="text-white text-xl font-semibold">{car.specs.power}</div>
@@ -322,7 +322,7 @@ export default function CarDetailPage() {
 
             {/* Right Column - Booking */}
             <div className="lg:col-span-1">
-              <div className="sticky top-24">
+              <div className="lg:sticky lg:top-24">
                 {/* Pricing Card */}
                 <div className="bg-gray-900 border border-gold/20 rounded-xl p-6 mb-6">
                   <h3 className="text-xl font-serif text-white mb-6">Preisstaffelung</h3>
@@ -510,7 +510,7 @@ export default function CarDetailPage() {
                 </div>
               )}
 
-              <div className="flex gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
                 <button
                   type="button"
                   onClick={() => setShowBookingForm(false)}

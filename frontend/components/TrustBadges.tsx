@@ -46,26 +46,26 @@ export default function TrustBadges() {
   ]
 
   return (
-    <section className="py-16 px-4 bg-gray-900/50 border-y border-white/10">
+    <section className="py-12 sm:py-16 px-4 bg-gray-900/50 border-y border-white/10">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h3 className="text-2xl md:text-3xl font-serif text-white mb-2">
+        <div className="text-center mb-8 sm:mb-12">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-white mb-2 px-4">
             Vertrauen Sie auf <span className="text-emerald-400">Qualität</span>
           </h3>
-          <p className="text-gray-400">Über 5.000 zufriedene Kunden</p>
+          <p className="text-sm sm:text-base text-gray-400 px-4">Über 5.000 zufriedene Kunden</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {badges.map((badge, idx) => (
             <div
               key={idx}
-              className="group relative bg-black/30 border border-white/10 rounded-xl p-6 text-center hover:border-emerald-400/30 transition-all hover:transform hover:scale-105"
+              className="group relative bg-black/30 border border-white/10 rounded-xl p-4 sm:p-6 text-center hover:border-emerald-400/30 transition-all hover:transform hover:scale-105"
             >
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-center mb-3 sm:mb-4">
                 {badge.icon}
               </div>
 
-              <h4 className="text-white font-semibold text-sm mb-2">{badge.name}</h4>
+              <h4 className="text-white font-semibold text-xs sm:text-sm mb-2">{badge.name}</h4>
 
               {badge.rating && (
                 <div className="mb-2">
@@ -73,7 +73,7 @@ export default function TrustBadges() {
                     {[...Array(5)].map((_, i) => (
                       <svg
                         key={i}
-                        className={`w-4 h-4 ${
+                        className={`w-3 h-3 sm:w-4 sm:h-4 ${
                           i < Math.floor(Number(badge.rating))
                             ? 'text-yellow-400'
                             : 'text-gray-600'
@@ -85,7 +85,7 @@ export default function TrustBadges() {
                       </svg>
                     ))}
                   </div>
-                  <div className="text-2xl font-bold text-white">{badge.rating}</div>
+                  <div className="text-xl sm:text-2xl font-bold text-white">{badge.rating}</div>
                   <div className="text-xs text-gray-400">{badge.reviews} Bewertungen</div>
                 </div>
               )}
@@ -110,21 +110,21 @@ export default function TrustBadges() {
         </div>
 
         {/* Additional Trust Indicators */}
-        <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-gray-500 text-sm">
+        <div className="mt-8 sm:mt-12 flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 text-gray-500 text-xs sm:text-sm px-4">
           <div className="flex items-center gap-2">
-            <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
             <span>Vollkasko-Versicherung</span>
           </div>
           <div className="flex items-center gap-2">
-            <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
             <span>24/7 Support</span>
           </div>
           <div className="flex items-center gap-2">
-            <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
             <span>Kostenlose Stornierung</span>

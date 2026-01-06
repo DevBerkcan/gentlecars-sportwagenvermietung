@@ -252,7 +252,7 @@ export default function VerfuegbarkeitPage() {
 
             {startDate && endDate && (
               <div className="mt-6 pt-6 border-t border-gold/10">
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex flex-wrap items-center justify-between gap-2 text-sm">
                   <span className="text-gray-400">Ausgewählter Zeitraum:</span>
                   <span className="text-white font-semibold">
                     {formatDate(startDate)} - {formatDate(endDate)}
@@ -317,7 +317,7 @@ export default function VerfuegbarkeitPage() {
 
                     {/* Specs */}
                     {car.specs && (
-                      <div className="grid grid-cols-3 gap-3 mb-6">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
                         {car.specs.power && (
                           <div className="text-center">
                             <div className="text-gold text-lg font-bold">{car.specs.power}</div>
@@ -345,19 +345,19 @@ export default function VerfuegbarkeitPage() {
                         Preisstaffelung
                       </h4>
                       <div className="space-y-2 text-sm">
-                        <div className="flex justify-between text-gray-400">
+                        <div className="flex items-center justify-between gap-2 text-gray-400">
                           <span>Mo-Do</span>
                           <span className="text-gold font-semibold">{car.pricing.monday}€/Tag</span>
                         </div>
-                        <div className="flex justify-between text-gray-400">
+                        <div className="flex items-center justify-between gap-2 text-gray-400">
                           <span>Freitag</span>
                           <span className="text-gold font-semibold">{car.pricing.friday}€/Tag</span>
                         </div>
-                        <div className="flex justify-between text-gray-400">
+                        <div className="flex items-center justify-between gap-2 text-gray-400">
                           <span>Samstag</span>
                           <span className="text-gold font-semibold">{car.pricing.saturday}€/Tag</span>
                         </div>
-                        <div className="flex justify-between text-gray-400">
+                        <div className="flex items-center justify-between gap-2 text-gray-400">
                           <span>Sonntag</span>
                           <span className="text-gold font-semibold">{car.pricing.sunday}€/Tag</span>
                         </div>

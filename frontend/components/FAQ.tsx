@@ -45,19 +45,19 @@ export default function FAQ() {
   }
 
   return (
-    <section id="faq" className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
+    <section id="faq" className="py-16 sm:py-20 md:py-24 px-4 bg-gradient-to-b from-black to-gray-900">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-serif text-white mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-4 px-4">
             Häufig gestellte <span className="text-emerald-400">Fragen</span>
           </h2>
           <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-6" />
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto px-4">
             Hier finden Sie Antworten auf die wichtigsten Fragen rund um die Anmietung unserer Sportwagen
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -65,11 +65,11 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                className="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
               >
-                <span className="text-white font-semibold pr-4">{faq.question}</span>
+                <span className="text-white font-semibold pr-3 sm:pr-4 text-sm sm:text-base">{faq.question}</span>
                 <svg
-                  className={`w-6 h-6 text-emerald-400 flex-shrink-0 transition-transform duration-300 ${
+                  className={`w-5 h-5 sm:w-6 sm:h-6 text-emerald-400 flex-shrink-0 transition-transform duration-300 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                   fill="none"
@@ -84,7 +84,7 @@ export default function FAQ() {
                   openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
-                <div className="px-6 pb-5 text-gray-400 leading-relaxed border-t border-white/5 pt-4">
+                <div className="px-4 sm:px-6 pb-4 sm:pb-5 text-gray-400 leading-relaxed text-sm sm:text-base border-t border-white/5 pt-3 sm:pt-4">
                   {faq.answer}
                 </div>
               </div>
@@ -92,11 +92,11 @@ export default function FAQ() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-gray-400 mb-4">Haben Sie weitere Fragen?</p>
+        <div className="mt-8 sm:mt-12 text-center px-4">
+          <p className="text-gray-400 mb-4 text-sm sm:text-base">Haben Sie weitere Fragen?</p>
           <a
             href="/kontakt"
-            className="inline-block px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all uppercase tracking-wider text-sm"
+            className="inline-block w-full sm:w-auto px-6 sm:px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all uppercase tracking-wider text-xs sm:text-sm"
           >
             Kontaktieren Sie uns
           </a>

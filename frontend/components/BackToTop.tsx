@@ -24,7 +24,7 @@ export default function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-6 left-6 z-50 bg-white/10 hover:bg-emerald-500 backdrop-blur-md text-white rounded-full p-3 shadow-xl transition-all duration-300 border border-white/20 hover:border-emerald-400 ${
+      className={`fixed bottom-4 left-4 sm:bottom-6 sm:left-6 lg:bottom-8 lg:left-8 z-50 bg-white/10 hover:bg-emerald-500 backdrop-blur-md text-white rounded-full p-3 shadow-xl transition-all duration-300 border border-white/20 hover:border-emerald-400 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
       }`}
       aria-label="Nach oben scrollen"
