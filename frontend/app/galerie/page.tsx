@@ -4,6 +4,8 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import ContactButtons from '@/components/ContactButtons'
+import CarCompare from '@/components/CarCompare'
+import SEO from '@/components/SEO'
 
 interface GalleryCar {
   id: number
@@ -168,9 +170,16 @@ export default function GaleriePage() {
   const categories = Array.from(new Set(allCars.map(car => car.category)))
 
   return (
-    <main className="min-h-screen bg-black">
-      <Navigation />
-      <ContactButtons />
+    <>
+      <SEO
+        title="Fahrzeug Galerie - Premium Sportwagen mieten"
+        description="Entdecken Sie unsere exklusive Auswahl an Premium-Sportwagen. Porsche, Ferrari, Lamborghini, McLaren und mehr. Jetzt Traumauto mieten!"
+        canonicalUrl="https://gentlecars.de/galerie"
+        keywords={['Sportwagen Galerie', 'Luxusautos mieten', 'Supersportwagen', 'Premium Fahrzeuge', 'Sportwagen Auswahl']}
+      />
+      <main className="min-h-screen bg-black">
+        <Navigation />
+        <ContactButtons />
 
       {/* Hero Section */}
       <section className="pt-32 pb-12 px-4 bg-gradient-to-b from-black to-gray-900">
@@ -388,6 +397,10 @@ export default function GaleriePage() {
           </div>
         </div>
       </section>
+
+      {/* Car Compare Component */}
+      <CarCompare />
     </main>
+    </>
   )
 }

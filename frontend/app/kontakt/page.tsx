@@ -2,6 +2,7 @@
 
 import Navigation from '@/components/Navigation'
 import ContactButtons from '@/components/ContactButtons'
+import SEO from '@/components/SEO'
 import { useState } from 'react'
 import Link from 'next/link'
 

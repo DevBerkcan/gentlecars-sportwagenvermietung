@@ -2,12 +2,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Navigation from '@/components/Navigation'
 import ContactButtons from '@/components/ContactButtons'
+import SEO from '@/components/SEO'
 
 export default function UeberUnsPage() {
   return (
-    <main className="min-h-screen bg-black">
-      <Navigation />
-      <ContactButtons />
+    <>
+      <SEO
+        title="Über uns - GentleCars Premium Sportwagenvermietung"
+        description="Erfahren Sie mehr über GentleCars. Seit über 15 Jahren Ihr Partner für exklusive Sportwagen-Erlebnisse. Leidenschaft, Expertise und erstklassiger Service."
+        canonicalUrl="https://gentlecars.de/ueber-uns"
+        keywords={['Über GentleCars', 'Sportwagen Vermietung Team', 'Premium Service', 'Luxusauto Experten']}
+      />
+      <main className="min-h-screen bg-black">
+        <Navigation />
+        <ContactButtons />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 px-4 bg-gradient-to-b from-black to-gray-900 overflow-hidden">
@@ -296,5 +304,6 @@ export default function UeberUnsPage() {
         </div>
       </section>
     </main>
+    </>
   )
 }

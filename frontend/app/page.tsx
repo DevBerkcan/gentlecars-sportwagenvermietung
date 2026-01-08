@@ -10,6 +10,9 @@ import BackToTop from "@/components/BackToTop";
 import Newsletter from "@/components/Newsletter";
 import TrustBadges from "@/components/TrustBadges";
 import PriceCalculator from "@/components/PriceCalculator";
+import ScrollReveal from "@/components/animations/ScrollReveal";
+import StatsCounter from "@/components/StatsCounter";
+import SEO from "@/components/SEO";
 
 export const dynamic = 'force-dynamic'
 
@@ -17,12 +20,18 @@ export default async function HomePage() {
   const cars = await getCars();
 
   return (
-    <main className="min-h-screen bg-black">
-      <Navigation />
-      <ContactButtons />
-      <CookieBanner />
-      <WhatsAppButton />
-      <BackToTop />
+    <>
+      <SEO
+        title="GentleCars - Premium Sportwagenvermietung | Porsche, Ferrari, Lamborghini"
+        description="Mieten Sie exklusive Sportwagen und Supersportwagen bei GentleCars. Porsche 911, Ferrari F8, Lamborghini Huracán und mehr. Premium Service, transparente Preise, 24/7 Support."
+        canonicalUrl="https://gentlecars.de"
+      />
+      <main className="min-h-screen bg-black">
+        <Navigation />
+        <ContactButtons />
+        <CookieBanner />
+        <WhatsAppButton />
+        <BackToTop />
 
       {/* Hero Section */}
       <section className="relative min-h-screen h-screen flex items-center justify-center overflow-hidden">
@@ -93,28 +102,8 @@ export default async function HomePage() {
       {/* Trust Badges */}
       <TrustBadges />
 
-      {/* Stats Section */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 bg-gradient-to-b from-black to-gray-900 border-y border-white/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-            {[
-              { number: "50+", label: "Premium Fahrzeuge" },
-              { number: "5.000+", label: "Zufriedene Kunden" },
-              { number: "15+", label: "Jahre Erfahrung" },
-              { number: "24/7", label: "Kundenservice" }
-            ].map((stat, idx) => (
-              <div key={idx} className="text-center py-4">
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 font-serif">
-                  {stat.number}
-                </div>
-                <div className="text-gray-400 text-xs sm:text-sm uppercase tracking-wider px-2">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Stats Section with Animated Counters */}
+      <StatsCounter />
 
       {/* Features Section */}
       <section className="py-16 sm:py-20 md:py-24 px-4 bg-gray-900">
@@ -458,5 +447,6 @@ export default async function HomePage() {
         </div>
       </footer>
     </main>
+    </>
   );
 }
