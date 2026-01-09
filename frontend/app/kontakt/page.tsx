@@ -51,9 +51,16 @@ export default function KontaktPage() {
   }
 
   return (
-    <main className="min-h-screen bg-black">
-      <Navigation />
-      <ContactButtons />
+    <>
+      <SEO
+        title="Kontakt - GentleCars Premium Sportwagenvermietung"
+        description="Kontaktieren Sie GentleCars für Ihre Sportwagen-Vermietung. Persönliche Beratung, schnelle Antworten. Tel, E-Mail oder direkt vor Ort in Essen."
+        canonicalUrl="https://gentlecars.de/kontakt"
+        keywords={['GentleCars Kontakt', 'Sportwagen mieten Anfrage', 'Beratung Luxusautos', 'Kontaktformular']}
+      />
+      <main className="min-h-screen bg-black">
+        <Navigation />
+        <ContactButtons />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 bg-gradient-to-b from-black via-gray-900 to-black">
@@ -316,5 +323,6 @@ export default function KontaktPage() {
         </div>
       </section>
     </main>
+    </>
   )
 }

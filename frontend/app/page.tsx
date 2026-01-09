@@ -13,6 +13,10 @@ import PriceCalculator from "@/components/PriceCalculator";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import StatsCounter from "@/components/StatsCounter";
 import SEO from "@/components/SEO";
+import Testimonials from "@/components/Testimonials";
+import GlobalSearch from "@/components/GlobalSearch";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import BrandLogos from "@/components/BrandLogos";
 
 export const dynamic = 'force-dynamic'
 
@@ -32,6 +36,8 @@ export default async function HomePage() {
         <CookieBanner />
         <WhatsAppButton />
         <BackToTop />
+        <GlobalSearch />
+        <ScrollProgressBar />
 
       {/* Hero Section */}
       <section className="relative min-h-screen h-screen flex items-center justify-center overflow-hidden">
@@ -104,6 +110,9 @@ export default async function HomePage() {
 
       {/* Stats Section with Animated Counters */}
       <StatsCounter />
+
+      {/* Brand Logos */}
+      <BrandLogos />
 
       {/* Features Section */}
       <section className="py-16 sm:py-20 md:py-24 px-4 bg-gray-900">
@@ -276,61 +285,8 @@ export default async function HomePage() {
       {/* Price Calculator */}
       <PriceCalculator />
 
-      {/* Testimonials */}
-      <section className="py-16 sm:py-20 md:py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-4 px-4">
-              Das sagen unsere <span className="text-emerald-400">Kunden</span>
-            </h2>
-            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent mx-auto" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {[
-              {
-                name: "Michael Schmidt",
-                location: "Düsseldorf",
-                text: "Absolut professioneller Service! Der Porsche 911 GT3 war in makellosem Zustand. Die Übergabe lief reibungslos und das Team war äußerst kompetent.",
-                rating: 5,
-                car: "Porsche 911 GT3"
-              },
-              {
-                name: "Sarah Weber",
-                location: "Frankfurt",
-                text: "Traumhafte Erfahrung! Habe mir für mein Hochzeitswochenende einen Ferrari gemietet. Unvergesslich! Der VIP-Service ist jeden Cent wert.",
-                rating: 5,
-                car: "Ferrari F8 Tributo"
-              },
-              {
-                name: "Thomas Müller",
-                location: "Hamburg",
-                text: "Bereits zum dritten Mal bei GentleCars und jedes Mal begeistert. Transparente Preise, top Fahrzeuge und exzellenter Kundenservice. Klare Empfehlung!",
-                rating: 5,
-                car: "Lamborghini Huracán"
-              }
-            ].map((testimonial, idx) => (
-              <div key={idx} className="bg-black border border-white/20 rounded-lg p-6 sm:p-8 hover:border-emerald-400/40 transition-all">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed italic text-sm sm:text-base">
-                  "{testimonial.text}"
-                </p>
-                <div className="border-t border-white/10 pt-4">
-                  <div className="font-semibold text-white text-sm sm:text-base">{testimonial.name}</div>
-                  <div className="text-xs sm:text-sm text-gray-400">{testimonial.location}</div>
-                  <div className="text-xs text-emerald-400 mt-1">{testimonial.car}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* FAQ Section */}
       <FAQ />

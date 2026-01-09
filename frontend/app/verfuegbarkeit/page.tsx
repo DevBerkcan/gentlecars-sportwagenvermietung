@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import ContactButtons from '@/components/ContactButtons'
+import SEO from '@/components/SEO'
 
 interface Car {
   id: number
@@ -193,9 +194,16 @@ export default function VerfuegbarkeitPage() {
   }
 
   return (
-    <main className="min-h-screen bg-black">
-      <Navigation />
-      <ContactButtons />
+    <>
+      <SEO
+        title="Verfügbarkeit prüfen - GentleCars Sportwagenvermietung"
+        description="Prüfen Sie die Verfügbarkeit unserer Premium-Sportwagen für Ihren Wunschzeitraum. Einfache Buchung, transparente Preise, sofortige Bestätigung."
+        canonicalUrl="https://gentlecars.de/verfuegbarkeit"
+        keywords={['Sportwagen Verfügbarkeit', 'Luxusauto buchen', 'Supersportwagen Termine', 'Online Buchung Sportwagen']}
+      />
+      <main className="min-h-screen bg-black">
+        <Navigation />
+        <ContactButtons />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 bg-gradient-to-b from-black to-gray-900">
@@ -448,5 +456,6 @@ export default function VerfuegbarkeitPage() {
         </section>
       )}
     </main>
+    </>
   )
 }
